@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import sia.tacocloud.data.jdbc.TacoOrderRepositoryJdbc;
+import sia.tacocloud.data.jpa.TacoOrderRepositoryJpa;
 import sia.tacocloud.model.entity.TacoOrder;
 
 import javax.validation.Valid;
@@ -20,10 +20,10 @@ import javax.validation.Valid;
 @SessionAttributes("tacoOrder")
 public class OrderController {
 
-    private TacoOrderRepositoryJdbc tacoOrderRepository;
+    private TacoOrderRepositoryJpa tacoOrderRepository;
 
     @Autowired
-    public OrderController(TacoOrderRepositoryJdbc tacoOrderRepository) {
+    public OrderController(TacoOrderRepositoryJpa tacoOrderRepository) {
         this.tacoOrderRepository = tacoOrderRepository;
     }
 
