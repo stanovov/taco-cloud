@@ -28,6 +28,6 @@ public class TacoCloudApplication {
             ingredientRepository.save(new Ingredient("JACK", "Monterrey Jack", IngredientType.CHEESE));
             ingredientRepository.save(new Ingredient("SLSA", "Salsa", IngredientType.SAUCE));
             ingredientRepository.save(new Ingredient("SRCR", "Sour Cream", IngredientType.SAUCE));
-        }
+        };
     }
 }

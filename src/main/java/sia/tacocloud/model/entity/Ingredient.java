@@ -1,16 +1,15 @@
 package sia.tacocloud.model.entity;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+import lombok.*;
 import sia.tacocloud.model.enums.IngredientType;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 @Data
-@Table
+@Entity
 @AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 public class Ingredient {
 
