@@ -8,14 +8,14 @@ import sia.tacocloud.model.enums.IngredientType;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PUBLIC, force = true)
+@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 @Table("ingredients")
 public class Ingredient {
 
     @PrimaryKey
-    private final String id;
+    private String id;
 
-    private final String name;
+    private String name;
 
-    private final IngredientType type;
+    private IngredientType type;
 }

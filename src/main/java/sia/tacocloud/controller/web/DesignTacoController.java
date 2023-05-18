@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import sia.tacocloud.data.IngredientRepository;
 import sia.tacocloud.model.entity.Ingredient;
 import sia.tacocloud.model.entity.Taco;
 import sia.tacocloud.model.entity.TacoOrder;
@@ -22,17 +23,17 @@ import java.util.stream.Collectors;
 @SessionAttributes("tacoOrder")
 public class DesignTacoController {
 
-//    private final IngredientRepositoryJpa ingredientRepository;
-//
-//    @Autowired
-//    public DesignTacoController(IngredientRepositoryJpa ingredientRepository) {
-//        this.ingredientRepository = ingredientRepository;
-//    }
+    private final IngredientRepository ingredientRepository;
+
+    @Autowired
+    public DesignTacoController(IngredientRepository ingredientRepository) {
+        this.ingredientRepository = ingredientRepository;
+    }
 
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
         List<Ingredient> ingredients = new ArrayList<>();
-//        ingredientRepository.findAll().forEach(ingredients::add);
+        ingredientRepository.findAll().forEach(ingredients::add);
         IngredientType[] types = IngredientType.values();
         for (IngredientType type : types) {
             model.addAttribute(type.toString().toLowerCase(), filterByType(ingredients, type));
