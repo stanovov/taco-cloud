@@ -1,18 +1,18 @@
 package sia.tacocloud.model.entity;
 
 import lombok.*;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 import sia.tacocloud.model.enums.IngredientType;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PUBLIC, force = true)
+@Table("ingredients")
 public class Ingredient {
 
-    @Id
+    @PrimaryKey
     private final String id;
 
     private final String name;
